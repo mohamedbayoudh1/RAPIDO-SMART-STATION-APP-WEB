@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 import json
 from django.http import JsonResponse
 from django.contrib.auth.models import User
-#from validate_email import validate_email
+from validate_email import validate_email
 from django.contrib import messages
 from django.core.mail import EmailMessage
 from django.contrib.sites.shortcuts import get_current_site
@@ -64,7 +64,7 @@ class RegistrationView(View):
 
         if not User.objects.filter(username=username).exists():
             if not User.objects.filter(email=email).exists():
-                if len(password) < 6:
+                if len(password) < 8:
                     messages.error(request, 'Password too short')
                     return render(request, 'authentication/register.html', context)
 
@@ -103,11 +103,11 @@ class LoginView(View):
             user = auth.authenticate(username=username, password=password)
 
             if user:
-                
+                if user.is_active:
                     auth.login(request, user)
                     messages.success(request, 'Welcome, ' +
                                      user.username+' you are now logged in')
-                    return redirect('stations')
+                    return redirect('expenses')
     
             messages.error(
                 request, 'Invalid credentials,try again')

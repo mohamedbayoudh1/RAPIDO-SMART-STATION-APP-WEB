@@ -29,7 +29,7 @@
       <form action="{% url 'expense-edit' expense.id %}" method="post">
         {% include 'partials/_messages.html'%} {% csrf_token %}
         <div class="form-group">
-          <label for="">Amount</label>
+          <label for="">Gasoline.level en m3</label>
           <input
             type="text"
             class="form-control form-control-sm"
@@ -38,7 +38,7 @@
           />
         </div>
         <div class="form-group">
-          <label for="">Description</label>
+          <label for="">Security alert</label>
           <input
             type="text"
             class="form-control form-control-sm"
@@ -61,7 +61,7 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="">Date of Expense</label>
+          <label for="">Date</label>
           <input
             type="date"
             value="{{values.date |date:'Y-m-d' }}"

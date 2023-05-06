@@ -12,6 +12,5 @@ urlpatterns = [
          name="search_tanks"),
     path('tank_category_summary', views.tank_category_summary,
          name="tank_category_summary"),
-    path('stats', views.stats_view,
-         name="stats")
+
 ]

@@ -13,7 +13,7 @@
 
       <div class="card-body">
         <div class="card-title py-3">
-          <h4>Register for a account</h4>
+          <h4>Register for a account or sign in :</h4>
         </div>
         <form action="{% url 'register' %}" method="post">
           {% csrf_token %}
@@ -57,6 +57,7 @@
             <small class="float-right py-3 showPasswordToggle">SHOW</small>
           </div>
           <input type="submit" value="Register" class="btn btn-block btn-primary submit-btn" />
+          <a href="{% url 'login'%}" class="nav-link px-3" href="#"><h4>or : Sign in</h4>
         </form>
 
       </div>

@@ -18,7 +18,7 @@ from django.urls import path,include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path('', include('expenses.urls')),
-     path('a', include('tanks.urls')),
+     path('tanks', include('tanks.urls')),
      path('authentication/', include('authentication.urls')),
     #path('preferences/', include('userpreferences.urls')),
     path('income/', include('userincome.urls')),

@@ -33,7 +33,7 @@ class Migration(migrations.Migration):
                 ('date', models.DateField(default=django.utils.timezone.now)),
                 ('description', models.TextField()),
                 ('category', models.CharField(max_length=266)),
-                ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+             
             ],
             options={
                 'ordering': ['-date'],

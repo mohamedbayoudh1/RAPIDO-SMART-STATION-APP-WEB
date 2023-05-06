@@ -65,7 +65,7 @@ def add_expense(request):
 
         Expense.objects.create(owner=request.user, amount=amount, date=date,
                                category=category, description=description)
-        messages.success(request, 'Expense saved successfully')
+        messages.success(request, 'Tank saved successfully')
 
         return redirect('expenses')
 
@@ -102,7 +102,7 @@ def expense_edit(request, id):
         expense.description = description
 
         expense.save()
-        messages.success(request, 'Expense updated  successfully')
+        messages.success(request, 'Tank updated  successfully')
 
         return redirect('expenses')
 
@@ -110,7 +110,7 @@ def expense_edit(request, id):
 def delete_expense(request, id):
     expense = Expense.objects.get(pk=id)
     expense.delete()
-    messages.success(request, 'Expense removed')
+    messages.success(request, 'Tank removed')
     return redirect('expenses')
 
 

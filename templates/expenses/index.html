@@ -10,17 +10,19 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="">Expenses</a>
+            <a href="">Gasoil Tanks</a>
           </li>
           <li class="breadcrumb-item active" aria-current="page">
-            My Expenses
+            My Tanks
           </li>
         </ol>
       </nav>
     </div>
-
+    <a href="{% url 'stats'%}" class="btn btn-primary">Statistique</a>
+    
     <div class="col-md-2">
-      <a href="{% url 'add-expenses'%}" class="btn btn-primary">Add Expense</a>
+    
+      <a href="{% url 'add-expenses'%}" class="btn btn-primary">Add Tanks</a>  
     </div>
   </div>
 
@@ -41,9 +43,9 @@
   <table class="table table-stripped table-hover">
     <thead>
       <tr>
-        <th>Amount ({{currency}})</th>
+        <th>Gasoline.level en m3({{currency}})</th>
         <th>Category</th>
-        <th>Description</th>
+        <th>Security alert</th>
         <th>Date</th>
         <th></th>
       </tr>
@@ -78,9 +80,9 @@
       <table class="table table-stripped table-hover">
         <thead>
           <tr>
-            <th>Amount ({{currency}})</th>
+            <th>Niveau d oil ({{currency}})</th>
             <th>Category</th>
-            <th>Description</th>
+            <th>Etat de fire</th>
             <th>Date</th>
             <th></th>
           </tr>
